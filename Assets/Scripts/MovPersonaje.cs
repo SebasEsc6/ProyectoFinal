@@ -139,6 +139,7 @@ public class MovPersonaje : MonoBehaviour
     }
     public void DejePatiar()
     {
+        estoyAtacando = false;
         patada = false;
     }
 
