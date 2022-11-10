@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MovPersonaje : MonoBehaviour
 {
-    public float velocidadInicial = 5.0f;
+    public float velocidadInicial = 15f;
     public float velocidadRotacion = 200.0f;
     public float fuerzaSalto = 8f;
     public float x, y, VelocidadMovimiento;
@@ -49,10 +49,10 @@ public class MovPersonaje : MonoBehaviour
             estoyAtacando = true;
         }
 
-
         VelocidadMovimiento = velocidadInicial;
-        if (Input.GetKey(KeyCode.LeftShift)) {
-            VelocidadMovimiento = 10.0f;
+        if (Input.GetKey(KeyCode.LeftShift)) 
+        {
+            VelocidadMovimiento = 20.0f;
             if (y > 0)
             {
                 player.SetBool("PuedoCorrer", true);
@@ -78,7 +78,7 @@ public class MovPersonaje : MonoBehaviour
 
         //CORRER 
         if (Input.GetKey(KeyCode.LeftShift)) {
-            VelocidadMovimiento = 10.0f;
+            VelocidadMovimiento = 20.0f;
             if (y > 0)
             {
                 player.SetBool("PuedoCorrer", true);
