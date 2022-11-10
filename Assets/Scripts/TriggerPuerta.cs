@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TriggerPuerta : MonoBehaviour
+public class Trigger2 : MonoBehaviour
 {
-    public string Segunda;
+    public string Tercera;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +24,11 @@ public class TriggerPuerta : MonoBehaviour
         
         if(C.tag == "Player"){
 
-            SceneManager.LoadScene(Segunda);
+            Debug.Log(C.name);
+
+
+            SceneManager.LoadScene(Tercera);
+
 
 
             
