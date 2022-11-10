@@ -6,14 +6,15 @@ public class LogicEnemy : MonoBehaviour
 {
     // Start is called before the first frame update
     public int hp;
-    public int dañoPuño;
-    public int dañoPatada;
+    public int danoPuno;
+    public int danoPatada;
     public Animator anim;
 
     void Start()
     {
-        dañoPatada = 5;
-        dañoPuño = 4;
+        hp = 30;
+        danoPatada = 5;
+        danoPuno = 4;
     }
 
     // Update is called once per frame
@@ -23,13 +24,14 @@ public class LogicEnemy : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "puñoImpacto")
+        if (other.gameObject.tag == "golpeImpacto")
         {
             if (anim != null)
             {
+                
                 anim.Play("AnimacionHitEnemigo");
             }
-            hp -= dañoPuño;
+            hp -= danoPuno;
         }
         if (other.gameObject.tag == "patadaImpacto")
         {
@@ -37,7 +39,7 @@ public class LogicEnemy : MonoBehaviour
             {
                 anim.Play("AnimacionHitEnemigo");
             }
-            hp -= dañoPatada;
+            hp -= danoPatada;
         }
         if (hp <= 0)
         {

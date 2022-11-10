@@ -5,9 +5,11 @@ using UnityEngine;
 public class ActivarColliders : MonoBehaviour
 {
     // Start is called before the first frame update
-    public BoxCollider puñoBoxCol;
+    public BoxCollider golpeBoxCol;
     public BoxCollider patadaBoxCol;
     public MovPersonaje Personaje;
+
+    public bool patadas;
     void Start()
     {
         DesactivarColliders();
@@ -16,23 +18,25 @@ public class ActivarColliders : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        patadas = Personaje.patada;
     }
 
     public void ActivarCollider()
     {
-        if (Personaje.patada == true)
+        if (patadas)
         {
+            Debug.Log("entro a patada");
             patadaBoxCol.enabled = true;
         }
         else 
         {
-            puñoBoxCol.enabled = true;
+            Debug.Log("entro a GOLPE");
+            golpeBoxCol.enabled = true;
         }
     }
     public void DesactivarColliders() 
     {
         patadaBoxCol.enabled = false;
-        puñoBoxCol.enabled = false;
+        golpeBoxCol.enabled = false;
     }
 }
