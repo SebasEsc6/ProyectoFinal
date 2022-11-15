@@ -6,11 +6,12 @@ TagManager:
   tags:
   - patadaImpacto
   - "pu\xF1oImpacto"
+  - golpeImpacto
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - 

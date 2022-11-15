@@ -9,6 +9,10 @@ public class LogicEnemy : MonoBehaviour
     public int danoPuno;
     public int danoPatada;
     public Animator anim;
+    private GameManager gameManager;
+    public float rangoAlerta;
+    public LayerMask capaDelJugador;
+    public bool estarAlerta;
 
     void Start()
     {
@@ -20,7 +24,13 @@ public class LogicEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        estarAlerta = Physics.CheckSphere(transform.position, rangoAlerta, capaDelJugador);
+    }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, rangoAlerta);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -29,7 +39,7 @@ public class LogicEnemy : MonoBehaviour
             if (anim != null)
             {
                 
-                anim.Play("AnimacionHitEnemigo");
+                anim.Play("Zombie Reaction Hit");
             }
             hp -= danoPuno;
         }
@@ -37,7 +47,7 @@ public class LogicEnemy : MonoBehaviour
         {
             if (anim != null)
             {
-                anim.Play("AnimacionHitEnemigo");
+                anim.Play("Zombie Reaction Hit");
             }
             hp -= danoPatada;
         }
