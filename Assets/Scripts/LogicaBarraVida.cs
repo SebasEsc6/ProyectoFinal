@@ -10,20 +10,16 @@ public class LogicaBarraVida : MonoBehaviour
     public Image ImagenBarraVida;
     public float vida;
     private int health;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
+
     private int dañoEnemy;
     public GameObject CanvaVivo;
     public GameObject CanvaLoose;
     public string EscenaPrincipio;
-=======
-=======
->>>>>>> Stashed changes
+
     private int danoEnemy;
     public Animator anim;
-    
 
->>>>>>> Stashed changes
 
     // Start is called before the first frame update
     void Start()
@@ -59,15 +55,17 @@ public class LogicaBarraVida : MonoBehaviour
         {
             if (anim != null)
             {
-                Debug.Log("Quite" + danoEnemy);
-                
-
+                Debug.Log("te meti un traque"+ danoEnemy);
             }
             vida -= danoEnemy;
         }
+
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 
 
 
@@ -86,14 +84,9 @@ public class LogicaBarraVida : MonoBehaviour
     }
 
 }
-=======
-=======
->>>>>>> Stashed changes
-    }
+
+    
 
 
 
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+
