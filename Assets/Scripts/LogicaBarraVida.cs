@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LogicaBarraVida : MonoBehaviour
@@ -10,7 +11,9 @@ public class LogicaBarraVida : MonoBehaviour
     public float vida;
     private int health;
     private int dañoEnemy;
-
+    public GameObject CanvaVivo;
+    public GameObject CanvaLoose;
+    public string EscenaPrincipio;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +26,11 @@ public class LogicaBarraVida : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RevisarVida();      
+        RevisarVida();
+        if (vida <= 0) 
+        {
+            MostrarLoose();
+        }
     }
 
     public void RevisarVida() 
@@ -38,4 +45,21 @@ public class LogicaBarraVida : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+
+
+
+
+
+    //MANEJAR HUD Y ESCENAS
+    public void MostrarLoose()
+    {
+        CanvaLoose.SetActive(true);
+        CanvaVivo.SetActive(false);
+    }
+    public void VolverEmpezar()
+    {
+        SceneManager.LoadScene(EscenaPrincipio);
+    }
+
 }
