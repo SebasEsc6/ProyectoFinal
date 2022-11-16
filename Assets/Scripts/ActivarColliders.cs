@@ -9,7 +9,8 @@ public class ActivarColliders : MonoBehaviour
     public BoxCollider patadaBoxCol;
     public MovPersonaje Personaje;
 
-    public bool patadas;
+    public bool patada;
+    public bool puno;
     void Start()
     {
         DesactivarColliders();
@@ -18,17 +19,16 @@ public class ActivarColliders : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        patadas = Personaje.patada;
     }
 
     public void ActivarCollider()
     {
-        if (patadas)
+        if (patada)
         {
             Debug.Log("entro a patada");
             patadaBoxCol.enabled = true;
         }
-        else 
+        if(puno) 
         {
             Debug.Log("entro a GOLPE");
             golpeBoxCol.enabled = true;
@@ -38,5 +38,15 @@ public class ActivarColliders : MonoBehaviour
     {
         patadaBoxCol.enabled = false;
         golpeBoxCol.enabled = false;
+    }
+    public void Patada() 
+    {
+        puno = false;
+        patada = true;
+    }
+    public void golpe()
+    {
+        patada = false;
+        puno = true;        
     }
 }

@@ -8,6 +8,7 @@ public class LogicEnemy : MonoBehaviour
     public int hp;
     public int danoPuno;
     public int danoPatada;
+    public int dano;
     public Animator anim;
     private GameManager gameManager;
     public float rangoAlerta;
@@ -36,20 +37,25 @@ public class LogicEnemy : MonoBehaviour
     {
         if (other.gameObject.tag == "golpeImpacto")
         {
+            dano = danoPuno;
             if (anim != null)
             {
-                
+                Debug.Log("Quite" + dano);
                 anim.Play("Zombie Reaction Hit");
+                
             }
-            hp -= danoPuno;
+            hp -= dano;
         }
         if (other.gameObject.tag == "patadaImpacto")
         {
+            dano = danoPatada;
             if (anim != null)
             {
+                Debug.Log("Quite" + dano);
                 anim.Play("Zombie Reaction Hit");
+
             }
-            hp -= danoPatada;
+            hp -= dano;
         }
         if (hp <= 0)
         {

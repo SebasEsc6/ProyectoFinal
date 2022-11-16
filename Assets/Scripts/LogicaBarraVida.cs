@@ -5,30 +5,33 @@ using UnityEngine.UI;
 
 public class LogicaBarraVida : MonoBehaviour
 {
-    public int vidaMax;
-    public float vidaActual;
-    public Image ImagenBarraVida; 
+    private int vidaMax = 100;
+    private GameManager gameManager;
+    public Image ImagenBarraVida;
+    private float vida;
 
     // Start is called before the first frame update
     void Start()
     {
-        vidaActual = vidaMax;   
+
+        vida = gameManager.vida;
     }
 
     // Update is called once per frame
     void Update()
     {
-        RevisarVida();
-        if (vidaActual <= 0) 
-        {
-            gameObject.SetActive(false);
-        }
+        //Debug.Log("tengo "+ vida);
+        //RevisarVida();
+        //if (gameManager.vida <= 0)
+        //{
+        //    gameObject.SetActive(false);
+        //}
 
     }
 
     public void RevisarVida() 
     {
-        ImagenBarraVida.fillAmount = vidaActual / vidaMax;
+        //ImagenBarraVida.fillAmount = gameManager.vida / vidaMax;
     }
 
 }
