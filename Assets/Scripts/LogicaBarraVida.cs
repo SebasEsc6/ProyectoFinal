@@ -5,33 +5,37 @@ using UnityEngine.UI;
 
 public class LogicaBarraVida : MonoBehaviour
 {
-    private int vidaMax = 100;
-    private GameManager gameManager;
+    public int vidaMax;
     public Image ImagenBarraVida;
-    private float vida;
+    public float vida;
+    private int health;
+    private int dañoEnemy;
+
 
     // Start is called before the first frame update
     void Start()
     {
-
-        vida = gameManager.vida;
+        dañoEnemy = 10;
+        health = 10;
+        vida = vidaMax;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log("tengo "+ vida);
-        //RevisarVida();
-        //if (gameManager.vida <= 0)
-        //{
-        //    gameObject.SetActive(false);
-        //}
-
+        RevisarVida();      
     }
 
     public void RevisarVida() 
     {
-        //ImagenBarraVida.fillAmount = gameManager.vida / vidaMax;
+        ImagenBarraVida.fillAmount = vida / vidaMax;
     }
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Corazon")
+        {
+            vida += health;
+            Destroy(other.gameObject);
+        }
+    }
 }

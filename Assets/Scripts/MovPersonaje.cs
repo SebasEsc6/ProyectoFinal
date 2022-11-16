@@ -12,7 +12,6 @@ public class MovPersonaje : MonoBehaviour
     public Rigidbody rb;
     private Animator player;
 
-    public bool patada;
     public bool estoyAtacando;
     public bool avanzoSolo;
     public bool puedoSaltar;
@@ -29,10 +28,6 @@ public class MovPersonaje : MonoBehaviour
         {
             rb.velocity = transform.forward * impulsoDeGolpe;
         }
-        if (patada)
-        {
-            rb.velocity = - transform.forward * impulsoDeGolpe;
-        }
     }
     void Update()
     {
@@ -41,11 +36,6 @@ public class MovPersonaje : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && puedoSaltar && !estoyAtacando)
         {
             player.SetTrigger("Golpeo");          
-            estoyAtacando = true;
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse1) && puedoSaltar && !estoyAtacando)
-        {
-            player.SetTrigger("Patee");
             estoyAtacando = true;
         }
 
@@ -132,15 +122,6 @@ public class MovPersonaje : MonoBehaviour
     public void DejoDeAvanzar() 
     {
         avanzoSolo = false;
-    }
-    public void Patee() 
-    {
-        patada = true;
-    }
-    public void DejePatiar()
-    {
-        estoyAtacando = false;
-        patada = false;
     }
 
 }
