@@ -16,8 +16,8 @@ public class LogicaBarraVida : MonoBehaviour
     public GameObject CanvaVivo;
     public GameObject CanvaLoose;
     public string EscenaPrincipio;
-
     private int danoEnemy;
+
     public Animator anim;
 
 
@@ -45,19 +45,15 @@ public class LogicaBarraVida : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "golpeEnemigo")
+        { 
+            Debug.Log("te meti un traque" + danoEnemy);           
+            vida -= danoEnemy;
+        }
         if (other.gameObject.tag == "Corazon")
         {
             vida += health;
             Destroy(other.gameObject);
-        }
-
-        if (other.gameObject.tag == "golpeEnemigo")
-        {
-            if (anim != null)
-            {
-                Debug.Log("te meti un traque"+ danoEnemy);
-            }
-            vida -= danoEnemy;
         }
 
         if (vida <= 0)

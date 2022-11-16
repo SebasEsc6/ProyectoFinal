@@ -8,6 +8,8 @@ TagManager:
   - "pu\xF1oImpacto"
   - golpeImpacto
   - golpeEnemigo
+  - Corazon
+  - Enemy
   layers:
   - Default
   - TransparentFX

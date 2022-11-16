@@ -18,12 +18,17 @@ public class LogicEnemy : MonoBehaviour
     public float velocidad;
     public float rangoGolpe;
     public bool golpearJugador;
+   
+    
+    
 
     void Start()
     {
         hp = 100;
         danoPatada = 5;
-        danoPuno = 4;
+        danoPuno = 15;
+        
+        
     }
 
     // Update is called once per frame
@@ -50,7 +55,7 @@ public class LogicEnemy : MonoBehaviour
         if(golpearJugador == true)
         {
             anim.SetBool("Traque", true);
-
+            
         }
     }
 
