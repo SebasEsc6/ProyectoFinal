@@ -14,10 +14,12 @@ public class LogicEnemy : MonoBehaviour
     public float rangoAlerta;
     public LayerMask capaDelJugador;
     public bool estarAlerta;
+    public Transform jugador;
+    public float velocidad;
 
     void Start()
     {
-        hp = 30;
+        hp = 100;
         danoPatada = 5;
         danoPuno = 4;
     }
@@ -26,6 +28,17 @@ public class LogicEnemy : MonoBehaviour
     void Update()
     {
         estarAlerta = Physics.CheckSphere(transform.position, rangoAlerta, capaDelJugador);
+
+        if (estarAlerta == true)
+        {
+            Vector3 posJugador = new Vector3(jugador.position.x, transform.position.y, jugador.position.z);
+            Vector3 posEnemy = new Vector3(transform.position.x, jugador.position.y, transform.position.z);
+            transform.LookAt(posJugador);
+            transform.position = Vector3.MoveTowards(transform.position, posJugador, velocidad*Time.deltaTime);
+
+            anim.SetFloat("VelX", posEnemy.x);
+            anim.SetFloat("VelY", posEnemy.y);
+        }
     }
 
     private void OnDrawGizmos()
@@ -46,17 +59,7 @@ public class LogicEnemy : MonoBehaviour
             }
             hp -= dano;
         }
-        if (other.gameObject.tag == "patadaImpacto")
-        {
-            dano = danoPatada;
-            if (anim != null)
-            {
-                Debug.Log("Quite" + dano);
-                anim.Play("Zombie Reaction Hit");
-
-            }
-            hp -= dano;
-        }
+     
         if (hp <= 0)
         {
             Destroy(gameObject);
