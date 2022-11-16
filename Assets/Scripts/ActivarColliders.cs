@@ -7,7 +7,6 @@ public class ActivarColliders : MonoBehaviour
     // Start is called before the first frame update
     public BoxCollider golpeBoxCol;
 
-    public bool patada;
     public bool puno;
     void Start()
     {

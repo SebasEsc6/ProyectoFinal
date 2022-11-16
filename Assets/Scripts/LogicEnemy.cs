@@ -16,6 +16,8 @@ public class LogicEnemy : MonoBehaviour
     public bool estarAlerta;
     public Transform jugador;
     public float velocidad;
+    public float rangoGolpe;
+    public bool golpearJugador;
 
     void Start()
     {
@@ -38,6 +40,17 @@ public class LogicEnemy : MonoBehaviour
 
             anim.SetFloat("VelX", posEnemy.x);
             anim.SetFloat("VelY", posEnemy.y);
+
+            anim.SetBool("Traque", false);
+            anim.SetBool("MePegaron", false);
+        }
+
+        golpearJugador = Physics.CheckSphere(transform.position, rangoGolpe, capaDelJugador);
+
+        if(golpearJugador == true)
+        {
+            anim.SetBool("Traque", true);
+
         }
     }
 
@@ -50,14 +63,19 @@ public class LogicEnemy : MonoBehaviour
             if (anim != null)
             {
                 Debug.Log("Quite" + dano);
-                anim.Play("Zombie Reaction Hit");
+                anim.SetBool("MePegaron", true);
                 
             }
             hp -= dano;
         }
+        else
+        {
+            anim.SetBool("MePegaron", false);
+        }
      
         if (hp <= 0)
         {
+            anim.SetBool("Mori", true);
             Destroy(gameObject);
         }
     }

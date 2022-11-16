@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -464,7 +464,7 @@ Transform:
   m_Children:
   - {fileID: 1341323730}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &436022017
 MonoBehaviour:
@@ -490,6 +490,7 @@ MonoBehaviour:
   estarAlerta: 0
   jugador: {fileID: 0}
   velocidad: 0
+<<<<<<< Updated upstream
 --- !u!1001 &600451697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -547,6 +548,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 053e81987801abb449dd2257c2be6cd6, type: 3}
+=======
+  rangoGolpe: 0
+  golpearJugador: 0
+>>>>>>> Stashed changes
 --- !u!1 &640631954
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +820,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5375576859081693091, guid: c2c1b560df2e73847aed323124e16c33, type: 3}
       propertyPath: m_RootOrder
+<<<<<<< Updated upstream
       value: 1
+=======
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6b5f7793a6dd579439220036c63349b1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.64645
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6b5f7793a6dd579439220036c63349b1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.64645
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6b5f7793a6dd579439220036c63349b1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.64645
+>>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 5375576859081693091, guid: c2c1b560df2e73847aed323124e16c33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1133,7 +1154,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 7
+=======
+  m_RootOrder: 5
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1503411657
 GameObject:
@@ -1227,7 +1252,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 6
+=======
+  m_RootOrder: 4
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1549453118
 GameObject:
@@ -1830,6 +1859,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &4694820005713793653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1923,3 +1953,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvaVivo: {fileID: 0}
   CanvaLoose: {fileID: 0}
+=======
+>>>>>>> Stashed changes
