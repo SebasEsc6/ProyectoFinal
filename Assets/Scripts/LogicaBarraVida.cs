@@ -11,11 +11,14 @@ public class LogicaBarraVida : MonoBehaviour
     public float vida;
     private int health;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     private int dañoEnemy;
     public GameObject CanvaVivo;
     public GameObject CanvaLoose;
     public string EscenaPrincipio;
 =======
+=======
+>>>>>>> Stashed changes
     private int danoEnemy;
     public Animator anim;
     
@@ -64,6 +67,7 @@ public class LogicaBarraVida : MonoBehaviour
         }
     }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 
 
@@ -83,8 +87,13 @@ public class LogicaBarraVida : MonoBehaviour
 
 }
 =======
+=======
+>>>>>>> Stashed changes
     }
 
 
 
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
